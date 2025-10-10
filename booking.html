@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mc Beryus | Booking</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Professional Master of Ceremony for weddings, birthdays, and corporate events. Creating unforgettable experiences with class, fun, and elegance.">
+  <meta name="keywords" content="Master of Ceremony, Wedding MC, Birthday MC, Event Host, Corporate Events, Professional MC, Event Planner Support">
+  <meta name="author" content="Rejoice World REW">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="booking.css">
+  <link rel="stylesheet" href="classy.css">
+  <link rel="icon" href="Media/logo.jpg" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold text-white" href="#">
+        <img src="Media/logo.jpg" alt="Logo" width="40" class="me-2 rounded-circle">
+        Mc Beryus
+      </a>
+
+      <button class="navbar-toggler custom-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-end">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Booking Section -->
+  <section class="booking-section mt-5" id="booking">
+    <div class="container">
+      <div class="row g-4 align-items-stretch booking-row">
+
+        <!-- Form Column -->
+        <div class="col-lg-6 d-flex">
+          <div class="booking-form p-4 rounded shadow flex-fill d-flex flex-column justify-content-center">
+            <h2 class="fw-bold mb-4 text-center text-gold">Book MC Beryus</h2>
+
+            <form id="bookingForm">
+              <!-- Personal Information -->
+              <h5 class="mb-3 section-title text-gold">Personal Information</h5>
+              <div class="form-section personal-info">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                </div>
+                <div class="mb-3">
+                  <label for="referral" name="referral" class="form-label">How did you hear about MC Beryus?</label>
+                  <select id="referral" class="form-select" required>
+                    <option value="">Select an option</option>
+                    <option>Instagram</option>
+                    <option>WhatsApp</option>
+                    <option>Facebook</option>
+                    <option>Referral</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Event Details -->
+              <h5 class="mb-3 section-title text-gold">Event Details</h5>
+              <div class="form-section event-details">
+                <div class="mb-3">
+                  <label for="eventType" class="form-label">Event Type</label>
+                  <select id="eventType" name="eventType" class="form-select" required>
+                    <option value="">Select Event Type</option>
+                    <option>Wedding</option>
+                    <option>Birthday</option>
+                    <option>Corporate</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="eventDate" class="form-label">Event Date</label>
+                  <input type="date" id="eventDate" name="eventDate" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="eventLocation" class="form-label">Event Location / Venue</label>
+                  <input type="text" id="eventLocation" name="eventLocation" class="form-control" placeholder="Enter event location" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Additional Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="4" placeholder="Any additional information..."></textarea>
+                </div>
+              </div>
+
+              <div class="text-center mt-3">
+                <button type="submit" class="btn btn-booking w-100">Submit Booking</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Side Image Column -->
+        <div class="col-lg-6 d-none d-lg-flex">
+          <img src="Media/beryusAgba1.jpg" alt="Booking" class="booking-side-img flex-fill rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="bookingToast" class="booking-toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body"></div>
+  </div>
+
+
+<!-- Footer Section -->
+<footer class="footer-section py-5">
+  <div class="container text-center text-lg-start">
+    <div class="row g-4">
+      <!-- Brand & About -->
+      <div class="col-lg-4">
+        <a href="#" class="d-flex align-items-center mb-3 footer-brand">
+          <img src="Media/logo.jpg" alt="Logo" width="40" class="me-2 rounded-circle">
+          <span class="fw-bold">Mc Beryus</span>
+        </a>
+        <p class="footer-text">Professional MC services bringing energy, elegance, and unforgettable experiences to your events.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-4">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">What I Offer</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="col-lg-4">
+        <h5 class="fw-bold mb-3">Connect With Mc Beryus</h5>
+        <p class="footer-text mb-2">Email: adeakanfeadebayormi@gmail.com</p>
+        <p class="footer-text mb-2">Phone: +234 903 871 4659</p>
+        <p class="footer-text mb-3">Phone: +234 916 007 1293</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/mc_beryus?igsh=MTZzcjl4N20wa2ZxcA%3D%3D&utm_source=qr" class="me-3"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/message/REPTHCNWLHNZM1" class="me-3"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/share/16dECyWfcL/?mibextid=wwXIfr" class="me-3"><i class="fab fa-facebook"></i></a>
+          <a href="https://youtube.com/playlist?list=PLPSUeij6cdAm0JBKrqp7CfG8dFgswCNuV&si=Has6e1YybGFUxtka"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-2" style="border-color: rgba(255,215,0,0.3);">
+    <hr class="my-2" style="border-color: rgba(255,215,0,0.3);">
+
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Mc Beryus. All Rights Reserved.</p>
+    </div>
+
+    <div class="text-center">
+      <p class=" text-muted"> Designed by Phil (09160071293)</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="booking.js" defer></script>
+  <script src="script.js"></script>
+  <script src="classy.js"></script>
+
+</body>
+</html>

@@ -311,6 +311,7 @@
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
+
 /* Tablet and below (<= 992px) */
 @media (max-width: 992px) {
   .booking-section {
@@ -361,14 +362,59 @@
   }
 }
 
-/* Mobile and small screens (<= 576px) */
-@media (max-width: 576px) {
+
+@media (max-width: 820px) and (min-width: 650px) {
   .booking-section {
-    padding: 110px 0.3rem 70px;
+    padding: 100px 2.5% 80px; /* 👈 minimal side padding */
+  }
+
+  .booking-row {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .booking-form {
-    padding: 1.2rem 1rem;
+    width: 100%;                 /* 👈 almost full width */
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+  }
+
+  .booking-form h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.8rem;
+  }
+
+  .form-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .booking-form .form-control,
+  .booking-form .form-select,
+  .booking-form textarea {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .btn-booking {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 1rem;
+  }
+}
+
+
+/* Mobile and small screens (<= 576px) */
+@media (max-width: 576px) {
+  .booking-section {
+    padding: 110px 0.05rem 70px;
+  }
+
+  .booking-form {
+    padding: 1.2rem 0.3rem;
     border-radius: 10px;
     width: 100%;
     margin: 0 auto;

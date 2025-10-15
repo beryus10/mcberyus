@@ -84,14 +84,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Toast Function
-  function showToast(message) {
-    if (!toastEl || !toastBody) return;
-    toastBody.textContent = message;
-    toastEl.classList.add('show');
-    toastEl.style.zIndex = '2000';
-    setTimeout(() => toastEl.classList.remove('show'), 2000);
-  }
+  // Toast notification function
+
+function showToast(message, type = "success") {
+  const toastEl = document.getElementById('bookingToast');
+  const toastBody = toastEl.querySelector('.toast-body');
+
+  // Reset classes before showing a new one
+  toastEl.classList.remove('success', 'error', 'show');
+  
+  // Assign color theme
+  toastEl.classList.add(type);
+
+  // Update message and show
+  toastBody.textContent = message;
+  setTimeout(() => toastEl.classList.add('show'), 100); // small delay for animation
+
+  // Auto-hide after 3s
+  setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
 
   // Clear validation function
   function clearValidation() {

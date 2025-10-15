@@ -214,25 +214,73 @@
   }
 }
 
-/* Toast */
-.booking-toast {
+/* === Toast Notification Styling === */
+#bookingToast {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(90deg, #ffd700, #ffcc33);
+  top: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #ffd700, #ffcc33); /* Default: gold success */
   color: #000;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.5s ease;
-  z-index: 9999;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+  z-index: 2000;
 }
 
-.booking-toast.show {
+#bookingToast.show {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
+  pointer-events: auto;
+  animation: toastPop 0.4s ease-out;
+}
+
+/* Success (Gold) Theme */
+#bookingToast.success {
+  background: linear-gradient(135deg, #ffd700, #ffcc33);
+  color: #000;
+}
+
+/* Error (Red) Theme */
+#bookingToast.error {
+  background: linear-gradient(135deg, #ff4b2b, #ff0000);
+  color: #fff;
+}
+
+/* Toast Body */
+#bookingToast .toast-body {
+  font-size: 0.95rem;
+}
+
+/* Toast Close Button */
+#bookingToast .btn-close {
+  filter: invert(1);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+#bookingToast .btn-close:hover {
+  opacity: 1;
+}
+
+/* Pop Animation */
+@keyframes toastPop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 

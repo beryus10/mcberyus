@@ -103,7 +103,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="referral" name="referral" class="form-label"><i class="fas fa-question-circle me-2"></i>How did you hear about MC Beryus?</label>
-                    <select id="referral" class="form-select" required>
+                    <select id="referral" name="referral" class="form-select" required>
                       <option value="">Select an option</option>
                       <option>Instagram</option>
                       <option>WhatsApp</option>
@@ -157,6 +157,14 @@
       </div>
     </div>
   </section>
+
+<!-- Toast Notification -->
+<div id="bookingToast">
+  <div class="toast-body">Message goes here</div>
+  <button type="button" class="btn-close" onclick="this.parentElement.classList.remove('show')"></button>
+</div>
+
+
 
 <!-- Call To Action -->
 <section class="cta-section text-center py-5 animate-fade-up">

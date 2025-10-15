@@ -311,9 +311,118 @@
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Optional: add more breathing space on very large screens */
-@media (min-width: 1400px) {
-  .booking-section .container {
-    max-width: 85%;
+/* Tablet and below (<= 992px) */
+@media (max-width: 992px) {
+  .booking-section {
+    padding: 120px 5% 80px;
+  }
+
+  .booking-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .booking-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  }
+
+  .booking-form h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .booking-form .form-control,
+  .booking-form .form-select,
+  .booking-form textarea {
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-booking {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .booking-side-img {
+    display: none;
   }
 }
+
+/* Mobile and small screens (<= 576px) */
+@media (max-width: 576px) {
+  .booking-section {
+    padding: 110px 1rem 70px;
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .form-card {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .booking-form .form-control,
+  .booking-form .form-select,
+  .booking-form textarea {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .booking-form h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-booking {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  label {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* For very small screens (<= 400px) */
+@media (max-width: 400px) {
+  .booking-form {
+    padding: 1.2rem;
+  }
+
+  .form-card {
+    padding: 1rem;
+  }
+
+  .booking-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-booking {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
+

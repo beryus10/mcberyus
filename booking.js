@@ -18,14 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData.entries());
 
+    // Clear previous validation
+    clearValidation();
+
     // Simple validation
     const requiredFields = ['name', 'email', 'phone', 'referral', 'eventType', 'eventDate', 'eventLocation'];
-    const isValid = requiredFields.every((field) => data[field]?.trim() !== '');
+    let isValid = true;
+    requiredFields.forEach(field => {
+      const element = document.getElementById(field);
+      if (!data[field]?.trim()) {
+        element.classList.add('is-invalid');
+        isValid = false;
+      }
+    });
 
     if (!isValid) {
       showToast('Please fill in all required fields before submitting.');
       return;
     }
+
+    // Show loading state
+    const submitBtn = bookingForm.querySelector('.btn-booking');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
 
     // Send Telegram notification
     const telegramMessage = `
@@ -58,9 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       showToast('Booking submitted successfully! A confirmation email has been sent.');
       bookingForm.reset();
+      clearValidation();
     } catch (error) {
       console.error('Error:', error);
       showToast('Submission failed. Please try again later.');
+    } finally {
+      // Reset loading state
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Submit Booking';
     }
   });
 
@@ -71,5 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
     toastEl.classList.add('show');
     toastEl.style.zIndex = '2000';
     setTimeout(() => toastEl.classList.remove('show'), 2000);
+  }
+
+  // Clear validation function
+  function clearValidation() {
+    const fields = bookingForm.querySelectorAll('.form-control, .form-select');
+    fields.forEach(field => field.classList.remove('is-invalid'));
   }
 });
